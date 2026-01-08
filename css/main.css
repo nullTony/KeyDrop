@@ -1,3 +1,6 @@
+@import url(./_veriables.scss);
+@import url(./_components.scss);
+@import url(./_loyout.scss);
 * {
   margin: 0;
   padding: 0;
@@ -33,31 +36,175 @@
   align-items: center;
 }
 .container .regSystem .reg_container > div {
-  width: 450px;
-  min-height: 500px;
-  padding: 38px 24px;
-  background-color: #2c2c2e;
-  border-radius: 10px;
+  width: 400px;
+  min-height: 480px;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  z-index: 10;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
+  color: #fff;
 }
-.container .regSystem .reg_container > div div {
+.container .regSystem .reg_container > div > span {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  margin-bottom: -30px;
+}
+.container .regSystem .reg_container > div > span svg {
+  width: 32px;
+  height: 32px;
+}
+.container .regSystem .reg_container > div > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-bottom: 30px;
 }
-.container .regSystem .reg_container > div div span {
-  width: 78px;
-  height: 78px;
-  background-color: #fff;
+.container .regSystem .reg_container > div > div span {
+  width: 64px;
+  height: 64px;
+  background-color: white;
   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 32px;
-  border: 1px solid #222124;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.container .regSystem .reg_container > div > div span svg {
+  width: 38px;
+  height: 38px;
+}
+.container .regSystem .reg_container > div > div h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+.container .regSystem .reg_container > div > div p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+.container .regSystem .reg_container > div form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container .regSystem .reg_container > div form span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+}
+.container .regSystem .reg_container > div form span svg {
+  color: #222124;
+  width: 20px;
+  height: 20px;
+}
+.container .regSystem .reg_container > div form span label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 4px;
+  display: none;
+}
+.container .regSystem .reg_container > div form span input[type=text],
+.container .regSystem .reg_container > div form span input[type=password],
+.container .regSystem .reg_container > div form span input[type=email] {
+  border: none;
+  font-size: 14px;
+  color: #000;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  background: transparent;
+}
+.container .regSystem .reg_container > div form span input[type=text]::-moz-placeholder, .container .regSystem .reg_container > div form span input[type=password]::-moz-placeholder, .container .regSystem .reg_container > div form span input[type=email]::-moz-placeholder {
+  font-size: 14px;
+  color: #999;
+}
+.container .regSystem .reg_container > div form span input[type=text]::placeholder,
+.container .regSystem .reg_container > div form span input[type=password]::placeholder,
+.container .regSystem .reg_container > div form span input[type=email]::placeholder {
+  font-size: 14px;
+  color: #999;
+}
+.container .regSystem .reg_container > div form span > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .regSystem .reg_container > div form span > div input {
+  border: none;
+  font-size: 14px;
+  color: #000;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  background: transparent;
+}
+.container .regSystem .reg_container > div form span > div svg {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+.container .regSystem .reg_container > div form .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -5px;
+}
+.container .regSystem .reg_container > div form .checkbox-group input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  accent-color: #000;
+}
+.container .regSystem .reg_container > div form .checkbox-group label {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  margin: 0;
+}
+.container .regSystem .reg_container > div form button {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s;
+}
+.container .regSystem .reg_container > div form button:hover {
+  transform: scale(1.02);
+  background: #1a1a1a;
+}
+.container .regSystem .reg_container > div form .toggle-text {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+}
+.container .regSystem .reg_container > div form .toggle-text a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.container .regSystem .reg_container > div form .toggle-text a:hover {
+  text-decoration: underline;
 }

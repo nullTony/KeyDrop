@@ -1,0 +1,2 @@
+
+addEventListener('DOMContentLoaded', register);
