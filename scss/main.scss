@@ -5,9 +5,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@import url(./_veriables.scss);
-@import url(./_components.scss);
-@import url(./_loyout.scss);
+// @import url(./_veriables.scss);
+// @import url(./_components.scss);
+// @import url(./_loyout.scss);
 
 .container {
     max-width: 100%;
@@ -29,6 +29,7 @@
         height: 100vh;
         position: absolute;
         top: 0px;
+        display: none;
 
         .reg_container {
             width: 100%;
@@ -108,56 +109,33 @@
                 form {
                     display: flex;
                     flex-direction: column;
-                    gap: 16px;
+                    gap: 12px;
 
-                    span {
-                        display: flex;
-                        align-items: center;
-                        gap: 6px;
-                        width: 100%;
-                        padding: 10px 12px;
-                        background: rgba(255, 255, 255, 0.9);
-                        border-radius: 12px;
-                        svg {
-                            color: #222124;
-                            width: 20px;
-                            height: 20px;
-                        }
-                        label {
-                            font-size: 12px;
-                            font-weight: 600;
-                            margin-left: 4px;
-                            display: none;
-                        }
-
-                        input[type="text"],
-                        input[type="password"],
-                        input[type="email"] {
-                            border: none;
-                            font-size: 14px;
-                            color: #000;
-                            outline: none;
-                            transition: all 0.3s ease;
+                    > div {
+                        span {
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
                             width: 100%;
-                            background: transparent;
-
-                            &::placeholder {
-                                font-size: 14px;
-                                color: #999;
+                            padding: 10px 12px;
+                            background: rgba(255, 255, 255, 0.9);
+                            border-radius: 12px;
+                            svg {
+                                color: #222124;
+                                width: 20px;
+                                height: 20px;
+                            }
+                            #eyeShow {
+                                cursor: pointer;
+                                width: 24px;
+                                height: 24px;
+                                display: flex;
+                                align-items: center;
                             }
 
-                            // &:focus {
-                            //     background: #fff;
-                            //     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-                            // }
-                        }
-
-                        > div {
-                            width: 100%;
-                            display: flex;
-                            justify-content: space-between;
-
-                            input {
+                            input[type="text"],
+                            input[type="password"],
+                            input[type="email"] {
                                 border: none;
                                 font-size: 14px;
                                 color: #000;
@@ -165,12 +143,46 @@
                                 transition: all 0.3s ease;
                                 width: 100%;
                                 background: transparent;
+
+                                &::placeholder {
+                                    font-size: 14px;
+                                    color: #999;
+                                }
+
+                                // &:focus {
+                                //     background: #fff;
+                                //     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+                                // }
                             }
-                            svg {
-                                width: 22px;
-                                height: 22px;
-                                cursor: pointer;
+
+                            > div {
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+
+                                input {
+                                    border: none;
+                                    font-size: 14px;
+                                    color: #000;
+                                    outline: none;
+                                    transition: all 0.3s ease;
+                                    width: 100%;
+                                    background: transparent;
+                                }
+                                svg {
+                                    width: 22px;
+                                    height: 22px;
+                                    cursor: pointer;
+                                }
                             }
+                        }
+                        label {
+                            font-size: 13px;
+                            font-weight: 500;
+                            margin-left: 4px;
+                            display: block;
+                            color: #f86b6b;
+                            margin-top: 3px;
                         }
                     }
 
@@ -178,7 +190,7 @@
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        margin-top: -5px;
+                        margin-top: 5px;
 
                         input[type="checkbox"] {
                             width: 16px;
@@ -191,6 +203,13 @@
                             color: rgba(255, 255, 255, 0.8);
                             font-size: 12px;
                             margin: 0;
+                        }
+
+                        .errnot {
+                            transition: 0.4s;
+                            color: #f86b6b;
+                            padding: 5px;
+                            border-bottom: 1px solid white;
                         }
                     }
 
