@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', renderAuthButtons);
 
-document.getElementById('register').addEventListener('click', register);
-
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         signInCard.style.display = "none";
