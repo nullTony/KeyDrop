@@ -1,21 +1,55 @@
 import { register, registerMain, signInCard, signUpCard } from './users.js';
 
+export const hotBth = document.querySelector(".hot_cart");
+export const btnJoin = document.createElement("button");
+export const btnAdd = document.createElement("button");
 
-document.addEventListener('DOMContentLoaded', () => {
+export const favorite = document.getElementById("favorite");
+export const userLogo = document.getElementById("user_logo");
+export const basketBtn = document.getElementById("basketBtn");
+
+// Выносим рендеринг кнопок в функцию
+function renderAuthButtons() {
     const authStatus = localStorage.getItem('isLoggedIn');
 
     if (authStatus === "true") {
-        registerMain.style.display = "none";
-        console.log("Добро пожаловать обратно!");
-    } else {
-        if (authStatus === null) {
-            localStorage.setItem('isLoggedIn', "false");
-        }
+        // Логика для залогиненного пользователя
+        favorite.style.display = "flex";
+        userLogo.style.display = "flex";
+        basketBtn.style.display = "flex";
         
-        register();
-        console.log("Нужно зарегистрироваться");
+        btnJoin.remove();
+        btnAdd.remove();
+    } else {
+        // Логика для гостя
+        favorite.style.display = "none";
+        userLogo.style.display = "none";
+        basketBtn.style.display = "none";
+
+        btnJoin.innerHTML = "Sign In";
+        btnJoin.classList.add("basket_word");
+        hotBth.appendChild(btnJoin);
+
+        if (window.innerWidth >= 600) {
+            btnAdd.innerHTML = "Sign Up";
+            btnAdd.classList.add("basket_word");
+            hotBth.appendChild(btnAdd);
+        } else {
+            btnAdd.remove();
+        }
     }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('isLoggedIn') === null) {
+        localStorage.setItem('isLoggedIn', "false");
+    }
+    
+    renderAuthButtons();
+    register();
 });
+
+window.addEventListener('resize', renderAuthButtons);
 
 document.getElementById('register').addEventListener('click', register);
 

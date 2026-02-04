@@ -6,19 +6,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KeyDrop</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.cdnfonts.com/css/beatrice-display-trial" rel="stylesheet">
+                
 </head>
 
 <body>
     <div class="container">
         <div class="main_container">
-            <aside class="side-icons">...
-                <button id="register" onclick="register">Register</button>
+
+            <header>
+                <div class="nav_list">
+                    <span class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 6h10" /><path d="M4 12h16" /><path d="M7 12h13" /><path d="M4 18h10" /></svg>
+                    </span>
+                    <ul>
+                        <li><a href="#">menu</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">New</a></li>
+                    </ul>
+                </div>
+                <span>
+                    <img src="assets/Icons/Group 53.svg" alt="">
+                </span>
+                <div class="hot_cart">
+                    <button id="favorite">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                    </button>
+
+                    <span id="basketBtn">
+                        <button class="basket_word" style="margin-right: -10px;">cart</button>
+                        <button class="active_basket"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-basket"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304" /><path d="M17 10l-2 -6" /><path d="M7 10l2 -6" /></svg></button>
+                    </span>
+
+                    <button id="user_logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></button>
+                </div>
+            </header>
+            <aside class="search_catigories">
+                <div class="categories">
+                    <span>men</span>
+                    <span>women</span>
+                    <span>kids</span>
+                </div>
+                <div class="search_box">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7" /><line x1="21" y1="21" x2="15" y2="15" /></svg>
+                    </button>
+                    <input type="text" placeholder="Search">
+                </div>
             </aside>
 
-            <nav class="side-menu">...</nav>
+<!--         <nav class="side-menu">...</nav> -->
 
             <main class="main-content">
-                <header class="top-bar">...</header>
+                <section class="new_collection">
+                    <div class="control">
+                        <span>
+                            <h1>New <br> Collection</h1>
+                            <p>Summer <br> 2024</p>
+                        </span>
+
+                        <div>
+                            <button>
+                                Go To shop
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                            </button>
+                            <span>
+                                <button disabled>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+                                </button>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Group 65.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="shop_button">
+                        <button style="width: auto;">
+                            Go To shop
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                        </button>
+                    </div>
+                </section>
                 <div class="content-body">
                     <section class="filters">...</section>
                     <section class="products-grid">...</section>

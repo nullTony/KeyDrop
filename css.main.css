@@ -331,25 +331,17 @@
   .container .main_container header .hot_cart > button {
     width: 50px;
   }
-  .container .main_container .main-content > .new_collection {
+  .container .main_container > .new_collection {
     flex-direction: row;
   }
-  .container .main_container .main-content > .new_collection .control > span h1 {
-    font-size: 52px;
+  .container .main_container > .new_collection .categories {
+    grid-template-rows: repeat(1, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(120px, 1fr);
+    gap: 15px;
   }
-  .container .main_container .main-content > .new_collection .control > div {
-    display: flex;
-    gap: 20px;
-  }
-  .container .main_container .main-content > .new_collection .product {
-    overflow-x: hidden;
-    gap: 30px;
-  }
-  .container .main_container .main-content > .new_collection .product > div {
-    flex: 0 0 320px;
-  }
-  .container .main_container .main-content > .new_collection .shop_button {
-    display: none;
+  .container .main_container > .new_collection .search_box {
+    width: 300px;
   }
 }
 .container .regSystem {
@@ -571,4 +563,4 @@
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=css.main.css.map */

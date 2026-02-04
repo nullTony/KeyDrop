@@ -7,7 +7,7 @@ const toSignUp = document.querySelector('#toSignUp');
 const toSignIn = document.querySelector('#toSignIn');
 
 export function register() {
-    registerMain.style.display = 'block';
+    registerMain.style.display = 'flex';
     signInCard.style.display = 'block';
     signUpCard.style.display = 'none';
 
@@ -20,11 +20,9 @@ export function register() {
         signInCard.style.display = 'block';
         signUpCard.style.display = 'none';
     });
-
+    
     signInClose.forEach(closeBtn =>
         closeBtn.addEventListener('click', () => {
-            signInCard.style.display = "none";
-            signUpCard.style.display = "none";
             registerMain.style.display = "none";
         }));
 }
@@ -50,6 +48,18 @@ eyeContainers.forEach(container => {
             eyeOn.style.display = "none";
         }
     });
+});
+
+import { hotBth, btnJoin, btnAdd, favorite, userLogo, basketBtn } from './main.js'
+
+btnJoin.addEventListener("click", () => {
+    register()
+})
+
+btnAdd.addEventListener("click", () => {
+    register();
+    signInCard.style.display = 'none';
+    signUpCard.style.display = 'block';
 });
 
 const signInBtn = document.getElementById("joinAcc");
@@ -89,35 +99,29 @@ signInBtn.addEventListener("click", () => {
     }
 
 
-    fetch("/json/user.json")
+    fetch("https://697b7dc30e6ff62c3c5c3d92.mockapi.io/users")
         .then(res => res.json())
         .then(users => {
-
-            const foundUser = users.find(user => 
-                user.email.toLowerCase() === emailJoin.toLowerCase() && 
-                user.pass === passwordJoin
-            );
+            console.log(users)
+            const foundUser = users.find(u => u.email === emailJoin && u.password === passwordJoin);
 
             if (foundUser) {
-                console.log("Login successful!");
-                
-
                 localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", JSON.stringify({
-                    name: foundUser.name,
-                    email: foundUser.email
-                }));
+                localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
+                signInCard.style.display = "none"
+                signUpCard.style.display = "none"
 
-                window.location.href = "/index.html"; 
+                favorite.style.display = "flex"
+                userLogo.style.display = "flex"
+                basketBtn.style.display = "flex"
+
+                hotBth.removeChild(btnJoin);
+                hotBth.removeChild(btnAdd);
             } else {
-
                 emailJoinErr.innerHTML = "Invalid email or password";
+                console.log(users)
             }
-        })
-        .catch(err => {
-            console.error(err);
-            emailJoinErr.innerHTML = "Server error. Please try again later.";
         });
 });
 
@@ -181,19 +185,43 @@ signUpBtn.addEventListener("click", (e) => {
     }
 
     if (isValid) {
-        fetch("/json/user.json", {
+        const newUser = {
+            name: username,
+            email: email,
+            password: password
+        };
+
+        signInCard.style.display = "none"
+        signUpCard.style.display = "none"
+
+        favorite.style.display = "flex"
+        userLogo.style.display = "flex"
+        basketBtn.style.display = "flex"
+
+        hotBth.removeChild(btnJoin);
+        hotBth.removeChild(btnAdd);
+
+        fetch("https://697b7dc30e6ff62c3c5c3d92.mockapi.io/users", {
             method: "POST",
-            headers:{ "Content-Type": "aplication/json" },
-            body: JSON.stringify({
-                id: "002",
-                email: email,
-                name: username,
-                pass: password
-            })
+            headers: { 
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newUser)
         })
-        .then(res => res.json())
-        .then(user => {
-            console.log(user)
+        .then(async res => {
+            if (!res.ok) {
+                const errorText = await res.text();
+                throw new Error(`Ошибка сервера (${res.status}): ${errorText}`);
+            }
+            return res.json();
         })
+        .then(data => {
+            console.log("Успешно сохранено:", data);
+            alert(`Аккаунт создан! Ваш ID: ${data.id}`);
+            localStorage.setItem('isLoggedIn', "true");
+        })
+        .catch(err => {
+            console.error("Детали ошибки:", err.message);
+        });
     }
 });
