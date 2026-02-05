@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyDrop</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.cdnfonts.com/css/beatrice-display-trial" rel="stylesheet">
+                
+</head>
+
+<body>
+    <div class="container">
+        <div class="home_container">
+
+            <header>
+                <div class="nav_list">
+                    <span class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 6h10" /><path d="M4 12h16" /><path d="M7 12h13" /><path d="M4 18h10" /></svg>
+                    </span>
+                    <ul>
+                        <li><a href="#">menu</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">New</a></li>
+                    </ul>
+                </div>
+                <span>
+                    <img src="assets/Icons/Group 53.svg" alt="">
+                </span>
+                <div class="hot_cart">
+                    <button id="favorite">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
+                    </button>
+
+                    <span id="basketBtn">
+                        <button class="basket_word" style="margin-right: -10px;">cart</button>
+                        <button class="active_basket"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-basket"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304" /><path d="M17 10l-2 -6" /><path d="M7 10l2 -6" /></svg></button>
+                    </span>
+
+                    <button id="user_logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></button>
+                </div>
+            </header>
+            <aside class="search_catigories">
+                <div class="categories">
+                    <span>men</span>
+                    <span>women</span>
+                    <span>kids</span>
+                </div>
+                <div class="search_box">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7" /><line x1="21" y1="21" x2="15" y2="15" /></svg>
+                    </button>
+                    <input type="text" placeholder="Search">
+                </div>
+            </aside>
+
+<!--         <nav class="side-menu">...</nav> -->
+
+            <main class="main-content">
+                <section class="new_collection">
+                    <div class="control">
+                        <span>
+                            <h1>New <br> Collection</h1>
+                            <p>Summer <br> 2024</p>
+                        </span>
+
+                        <div>
+                            <a href="./products.html">
+                                <button>
+                                    Go To shop
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                                </button>
+                            </a>
+                            <span>
+                                <button disabled>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+                                </button>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Group 65.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="shop_button">
+                        <button style="width: auto;">
+                            Go To shop
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                        </button>
+                    </div>
+                </section>
+                <section class="week_card">
+                    <header>
+                        <h1>New <br> This week</h1>
+                        <a href="#">See All</a>
+                    </header>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Group 65.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <span>
+                        <button disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+                        </button>
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                        </button>
+                    </span>
+                </section>
+
+                <section class="other_products">
+                    <header>
+                        <h1>XIV <br> Collections <br> 23-24</h1>
+                        <div class="filtor">
+                            <span><a class="active" href="#">(ALL)</a></span>
+                            <span><a href="#">Men</a></span>
+                            <span><a href="#">Women</a></span>
+                            <span><a href="#">KID</a></span>
+                        </div>
+                    </header>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Group 65.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 12.png" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/Images/Rectangle 18.jpg" alt="">
+                            </div>
+                            <b>Cotton T Shirt</b>
+                            <span>
+                                <p>Full Sleeve Zipper</p>
+                                <p>$ 199</p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <span>
+                        <a href="#">more</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-compact-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 11l8 3l8 -3" /></svg>
+
+                    </span>
+                </section>
+                <div class="content-body">
+                    <section class="filters">...</section>
+                    <section class="products-grid">...</section>
+                </div>
+            </main>
+        </div>
+        <div class="regSystem">
+            <div class="reg_container">
+                <div class="signIn">
+                    <span class="loginClose">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M18 6l-12 12" />
+                            <path d="M6 6l12 12" />
+                        </svg>
+                    </span>
+                    <div>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-login-2">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+                                <path d="M3 12h13l-3 -3" />
+                                <path d="M13 15l3 -3" />
+                            </svg>
+                        </span>
+                        <h2>Sign in to your account</h2>
+                        <p>Access your orders, save items to your wishlist, and track your style journey.</p>
+                    </div>
+                    <form>
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-mail">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" />
+                                    <path
+                                        d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" />
+                                </svg>
+                                <input type="email" id="emailJoin" name="email" placeholder="Enter your email" required>
+                            </span>
+                            <label for="email" id="emailJoinErr"></label>
+                        </div>
+
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-lock">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M12 2a5 5 0 0 1 5 5v3a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3v-3a5 5 0 0 1 5 -5m0 12a2 2 0 0 0 -1.995 1.85l-.005 .15a2 2 0 1 0 2 -2m0 -10a3 3 0 0 0 -3 3v3h6v-3a3 3 0 0 0 -3 -3" />
+                                </svg>
+                                <input type="password" id="passwordJoin" name="password"
+                                    placeholder="Enter your password" required>
+                                <div id="eyeShow">
+                                    <svg id="eyeOff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                                        <path
+                                            d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                                        <path d="M3 3l18 18" />
+                                    </svg>
+                                    <svg id="eyeOn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye-edit"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M11.192 17.966c-3.242 -.28 -5.972 -2.269 -8.192 -5.966c2.4 -4 5.4 -6 9 -6c3.326 0 6.14 1.707 8.442 5.122" /><path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39" /></svg>
+                                </div>
+                            </span>
+                            <label for="password" id="passJoinErr"></label> 
+                        </div>
+
+                        <button id="joinAcc" type="">Sign In</button>
+                        <p class="toggle-text">Don't have an account? <a href="#" id="toSignUp">Register</a></p>
+                    </form>
+                </div>
+
+                <div class="signUp" style="display: none;">
+                    <span class="loginClose">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M18 6l-12 12" />
+                            <path d="M6 6l12 12" />
+                        </svg>
+                    </span>
+                    <div>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-user-plus">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                                <path d="M16 19h6" />
+                                <path d="M19 16v6" />
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+                            </svg>
+                        </span>
+                        <h2>Create an account</h2>
+                        <p>Join us to get exclusive offers and track your orders.</p>
+                    </div>
+                    <form>
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-mail">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" />
+                                    <path
+                                        d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" />
+                                </svg>
+                                <input type="email" id="reg-email" name="email" placeholder="Enter your email" required>
+                            </span>
+                            <label for="reg-email" id="errRagEmail"></label>
+                        </div>
+
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-user">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+                                    <path
+                                        d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+                                </svg>
+                                <input type="text" id="reg-username" name="username" placeholder="Enter your username"
+                                    required>
+                            </span>
+                            <label for="reg-username" id="errRagUsname"></label>
+                        </div>
+
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-lock">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M12 2a5 5 0 0 1 5 5v3a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3v-3a5 5 0 0 1 5 -5m0 12a2 2 0 0 0 -1.995 1.85l-.005 .15a2 2 0 1 0 2 -2m0 -10a3 3 0 0 0 -3 3v3h6v-3a3 3 0 0 0 -3 -3" />
+                                </svg>
+                                <div>
+                                    <input type="password" id="passwordSign" name="password" placeholder="Enter your password"
+                                        required>
+                                    <div id="eyeShow">
+                                        <svg id="eyeOff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                                            <path
+                                                d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                                            <path d="M3 3l18 18" />
+                                        </svg>
+                                        <svg id="eyeOn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye-edit"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M11.192 17.966c-3.242 -.28 -5.972 -2.269 -8.192 -5.966c2.4 -4 5.4 -6 9 -6c3.326 0 6.14 1.707 8.442 5.122" /><path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39" /></svg>
+                                    </div>
+                                </div>
+
+                            </span>
+                            <label for="reg-password" id="errPass"></label>
+                        </div>
+
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-copy-check">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M18.333 6a3.667 3.667 0 0 1 3.667 3.667v8.666a3.667 3.667 0 0 1 -3.667 3.667h-8.666a3.667 3.667 0 0 1 -3.667 -3.667v-8.666a3.667 3.667 0 0 1 3.667 -3.667zm-3.333 -4c1.094 0 1.828 .533 2.374 1.514a1 1 0 1 1 -1.748 .972c-.221 -.398 -.342 -.486 -.626 -.486h-10c-.548 0 -1 .452 -1 1v9.998c0 .32 .154 .618 .407 .805l.1 .065a1 1 0 1 1 -.99 1.738a3 3 0 0 1 -1.517 -2.606v-10c0 -1.652 1.348 -3 3 -3zm1.293 9.293l-3.293 3.292l-1.293 -1.292a1 1 0 0 0 -1.414 1.414l2 2a1 1 0 0 0 1.414 0l4 -4a1 1 0 0 0 -1.414 -1.414" />
+                                </svg>
+                                <input type="password" id="reg-confirm-password" name="confirm_password"
+                                    placeholder="Confirm your password" required>
+                            </span>
+                            <label for="reg-confirm-password" id="errConfPass"></label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms" id="termsT">I agree to the Terms & Conditions</label>
+                        </div>
+
+                        <button id="addAcc">Sign Up</button>
+                        <p class="toggle-text">Already have an account? <a href="#" id="toSignIn">Sign In</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="./js/users.js"></script>
+<script type="module" src="./js/main.js"></script>
+
+</html>

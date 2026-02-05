@@ -14,54 +14,54 @@
   background-size: cover;
   background-repeat: repeat;
 }
-.container .main_container {
+.container .home_container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
-.container .main_container > header {
+.container .home_container > header {
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding: 20px 0;
   align-items: center;
 }
-.container .main_container > header .nav_list {
+.container .home_container > header .nav_list {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.container .main_container > header .nav_list .logo {
+.container .home_container > header .nav_list .logo {
   cursor: pointer;
 }
-.container .main_container > header .nav_list .logo svg, .container .main_container > header .nav_list .logo img {
+.container .home_container > header .nav_list .logo svg, .container .home_container > header .nav_list .logo img {
   height: 30px;
   width: auto;
 }
-.container .main_container > header .nav_list ul {
+.container .home_container > header .nav_list ul {
   display: none;
   gap: 25px;
 }
-.container .main_container > header .nav_list ul li {
+.container .home_container > header .nav_list ul li {
   list-style: none;
 }
-.container .main_container > header .nav_list ul li a {
+.container .home_container > header .nav_list ul li a {
   text-transform: capitalize;
   text-decoration: none;
   color: #000;
   font-size: 16px;
   font-weight: 500;
 }
-.container .main_container > header .hot_cart {
+.container .home_container > header .hot_cart {
   display: flex;
   gap: 12px;
   align-items: center;
 }
-.container .main_container > header .hot_cart #favorite, .container .main_container > header .hot_cart #basket_word {
+.container .home_container > header .hot_cart #favorite, .container .home_container > header .hot_cart #basket_word {
   display: none;
 }
-.container .main_container > header .hot_cart .basket_word {
+.container .home_container > header .hot_cart .basket_word {
   width: auto;
   background-color: black;
   color: #fff;
@@ -74,10 +74,10 @@
   align-items: center;
   justify-content: center;
 }
-.container .main_container > header .hot_cart > span {
+.container .home_container > header .hot_cart > span {
   display: flex;
 }
-.container .main_container > header .hot_cart > span button {
+.container .home_container > header .hot_cart > span button {
   cursor: pointer;
   background-color: black;
   color: #fff;
@@ -91,7 +91,7 @@
   align-items: center;
   justify-content: center;
 }
-.container .main_container > header .hot_cart > span .active_basket {
+.container .home_container > header .hot_cart > span .active_basket {
   padding: 7px;
   background-color: #fff;
   border: 4px solid black;
@@ -99,12 +99,12 @@
   display: flex;
   align-items: center;
 }
-.container .main_container > header .hot_cart > span .active_basket svg {
+.container .home_container > header .hot_cart > span .active_basket svg {
   width: 23px;
   height: 23px;
   color: black;
 }
-.container .main_container > header .hot_cart > button {
+.container .home_container > header .hot_cart > button {
   padding: 10px 12px;
   background-color: #000;
   border-radius: 50%;
@@ -115,15 +115,15 @@
   border: none;
   cursor: pointer;
 }
-.container .main_container > header .hot_cart > button svg {
+.container .home_container > header .hot_cart > button svg {
   width: 20px;
   color: white;
 }
-.container .main_container > aside {
+.container .home_container > aside {
   display: flex;
   flex-direction: column;
 }
-.container .main_container > aside .categories {
+.container .home_container > aside .categories {
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-auto-flow: column;
@@ -131,12 +131,12 @@
   gap: 6px;
   grid-row: 3;
 }
-.container .main_container > aside .categories span {
+.container .home_container > aside .categories span {
   font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
 }
-.container .main_container > aside .search_box {
+.container .home_container > aside .search_box {
   margin-top: 20px;
   display: flex;
   background-color: #D9D9D9;
@@ -144,7 +144,7 @@
   width: 100%;
   padding: 10px 15px;
 }
-.container .main_container > aside .search_box button {
+.container .home_container > aside .search_box button {
   background: none;
   border: none;
   cursor: pointer;
@@ -152,11 +152,11 @@
   justify-content: center;
   align-items: center;
 }
-.container .main_container > aside .search_box button svg {
+.container .home_container > aside .search_box button svg {
   width: 20px;
   color: black;
 }
-.container .main_container > aside .search_box input {
+.container .home_container > aside .search_box input {
   border: none;
   outline: none;
   background: none;
@@ -166,43 +166,46 @@
   color: black;
   text-align: end;
 }
-.container .main_container > aside .search_box input::placeholder {
+.container .home_container > aside .search_box input::placeholder {
   color: #555555;
 }
-.container .main_container .main-content {
+.container .home_container .main-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 30px 0;
 }
-.container .main_container .main-content .new_collection {
+.container .home_container .main-content .new_collection {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 30px 0;
   height: auto;
 }
-.container .main_container .main-content .new_collection .control {
+.container .home_container .main-content .new_collection .control {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
 }
-.container .main_container .main-content .new_collection .control > span h1 {
+.container .home_container .main-content .new_collection .control > span h1 {
   font-size: 42px;
   font-weight: 700;
   line-height: 40px;
   text-transform: uppercase;
 }
-.container .main_container .main-content .new_collection .control > span p {
+.container .home_container .main-content .new_collection .control > span p {
   font-size: 16px;
   font-weight: 300;
 }
-.container .main_container .main-content .new_collection .control > div {
+.container .home_container .main-content .new_collection .control > div {
   display: none;
   gap: 30px;
 }
-.container .main_container .main-content .new_collection .control > div button {
+.container .home_container .main-content .new_collection .control > div a {
+  text-decoration: none;
+}
+.container .home_container .main-content .new_collection .control > div button {
   width: 265px;
   display: flex;
   justify-content: center;
@@ -214,75 +217,75 @@
   cursor: pointer;
   text-transform: capitalize;
 }
-.container .main_container .main-content .new_collection .control > div button:hover {
+.container .home_container .main-content .new_collection .control > div button:hover {
   transition: 0.4s;
   background-color: #d3d3d3;
 }
-.container .main_container .main-content .new_collection .control > div button:hover svg {
+.container .home_container .main-content .new_collection .control > div button:hover svg {
   transition: 0.4s;
   transform: translateX(10px);
 }
-.container .main_container .main-content .new_collection .control > div > span {
+.container .home_container .main-content .new_collection .control > div > span {
   display: flex;
   gap: 10px;
 }
-.container .main_container .main-content .new_collection .control > div > span button {
+.container .home_container .main-content .new_collection .control > div > span button {
   width: 40px;
   height: 40px;
   padding: 10px;
   background-color: transparent;
   border: 1px solid #000;
 }
-.container .main_container .main-content .new_collection .control > div > span button:disabled {
+.container .home_container .main-content .new_collection .control > div > span button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   border: 1px solid #383838;
 }
-.container .main_container .main-content .new_collection .control > div > span button:hover {
+.container .home_container .main-content .new_collection .control > div > span button:hover {
   transition: 0.4s;
   background-color: #000;
 }
-.container .main_container .main-content .new_collection .control > div > span button:hover svg {
+.container .home_container .main-content .new_collection .control > div > span button:hover svg {
   color: #fff;
   transform: translateX(0px);
 }
-.container .main_container .main-content .new_collection .product {
+.container .home_container .main-content .new_collection .product {
   max-width: 100%;
   height: auto;
   display: flex;
   gap: 10px;
   overflow-x: scroll;
 }
-.container .main_container .main-content .new_collection .product > div {
+.container .home_container .main-content .new_collection .product > div {
   flex: 0 0 170px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-.container .main_container .main-content .new_collection .product > div > div {
+.container .home_container .main-content .new_collection .product > div > div {
   flex: 0 0 170px;
   height: auto;
   border: 1px solid #D7D7D7;
 }
-.container .main_container .main-content .new_collection .product > div > div img {
+.container .home_container .main-content .new_collection .product > div > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.container .main_container .main-content .new_collection .product > div b {
+.container .home_container .main-content .new_collection .product > div b {
   display: block;
   font-size: 11px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.2666666667);
 }
-.container .main_container .main-content .new_collection .product > div span {
+.container .home_container .main-content .new_collection .product > div span {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   font-weight: 500;
   margin-top: -5px;
 }
-.container .main_container .main-content .new_collection .shop_button button {
+.container .home_container .main-content .new_collection .shop_button button {
   width: 265px;
   display: flex;
   justify-content: center;
@@ -294,67 +297,78 @@
   cursor: pointer;
   text-transform: capitalize;
 }
-.container .main_container .main-content .week_card {
+.container .home_container .main-content .week_card {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 30px 0;
 }
-.container .main_container .main-content .week_card header {
+.container .home_container .main-content .week_card header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.container .main_container .main-content .week_card header h1 {
+.container .home_container .main-content .week_card header h1 {
   font-size: 42px;
   text-transform: uppercase;
   line-height: 40px;
 }
-.container .main_container .main-content .week_card header a {
+.container .home_container .main-content .week_card header a {
   color: #5E5E5E;
   text-decoration: none;
+  padding: 4px;
 }
-.container .main_container .main-content .week_card > div {
+.container .home_container .main-content .week_card header a:hover {
+  transition: 0.1s;
+  text-decoration: underline;
+}
+.container .home_container .main-content .week_card > div {
   display: flex;
   overflow-x: hidden;
   gap: 15px;
 }
-.container .main_container .main-content .week_card > div > div {
+.container .home_container .main-content .week_card > div > div {
+  flex: 0 0 170px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex: 0 0 210px;
 }
-.container .main_container .main-content .week_card > div > div > div {
-  flex: 0 0 210px;
+.container .home_container .main-content .week_card > div > div > div {
+  flex: 0 0 170px;
   height: auto;
   border: 1px solid #D7D7D7;
 }
-.container .main_container .main-content .week_card > div > div > div img {
+.container .home_container .main-content .week_card > div > div > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.container .main_container .main-content .week_card > div > div b {
+.container .home_container .main-content .week_card > div > div b {
   display: block;
   font-size: 11px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.2666666667);
 }
-.container .main_container .main-content .week_card > div > div span {
+.container .home_container .main-content .week_card > div > div span {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   font-weight: 500;
   margin-top: -5px;
 }
-.container .main_container .main-content .week_card > span {
+.container .home_container .main-content .week_card > div > div {
+  flex: 0 0 210px;
+}
+.container .home_container .main-content .week_card > div > div > div {
+  flex: 0 0 210px;
+}
+.container .home_container .main-content .week_card > span {
   display: flex;
   gap: 10px;
   width: auto;
   margin: 0 auto;
 }
-.container .main_container .main-content .week_card > span button {
+.container .home_container .main-content .week_card > span button {
   width: 50px;
   height: 35px;
   display: flex;
@@ -364,81 +378,82 @@
   border: 1px solid #000;
   cursor: pointer;
 }
-.container .main_container .main-content .week_card > span button:disabled {
+.container .home_container .main-content .week_card > span button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   border: 1px solid #383838;
 }
-.container .main_container .main-content .other_products {
+.container .home_container .main-content .other_products {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.container .main_container .main-content .other_products header {
+.container .home_container .main-content .other_products header {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.container .main_container .main-content .other_products header h1 {
+.container .home_container .main-content .other_products header h1 {
   font-size: 42px;
   text-transform: uppercase;
   line-height: 40px;
 }
-.container .main_container .main-content .other_products header > div {
+.container .home_container .main-content .other_products header > div {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
 }
-.container .main_container .main-content .other_products header > div a {
+.container .home_container .main-content .other_products header > div a {
   color: #8A8A8A;
   font-size: 16px;
   text-decoration: none;
 }
-.container .main_container .main-content .other_products header > div .active {
+.container .home_container .main-content .other_products header > div .active {
   color: #000;
   font-weight: 500;
 }
-.container .main_container .main-content .other_products > div {
+.container .home_container .main-content .other_products > div {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 10px;
   justify-content: center;
 }
-.container .main_container .main-content .other_products > div > div {
+.container .home_container .main-content .other_products > div > div {
+  flex: 0 0 170px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-.container .main_container .main-content .other_products > div > div > div {
-  flex: 1 1 150px;
+.container .home_container .main-content .other_products > div > div > div {
+  flex: 0 0 170px;
   height: auto;
   border: 1px solid #D7D7D7;
 }
-.container .main_container .main-content .other_products > div > div > div img {
+.container .home_container .main-content .other_products > div > div > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.container .main_container .main-content .other_products > div > div b {
+.container .home_container .main-content .other_products > div > div b {
   display: block;
   font-size: 11px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.2666666667);
 }
-.container .main_container .main-content .other_products > div > div span {
+.container .home_container .main-content .other_products > div > div span {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   font-weight: 500;
   margin-top: -5px;
 }
-.container .main_container .main-content .other_products > span {
+.container .home_container .main-content .other_products > span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.container .main_container .main-content .other_products > span a {
+.container .home_container .main-content .other_products > span a {
   text-decoration: none;
   color: #8A8A8A;
   font-size: 16px;
@@ -448,75 +463,78 @@
   cursor: pointer;
 }
 @media screen and (min-width: 1024px) {
-  .container .main_container > header {
+  .container .home_container > header {
     padding: 40px 0;
   }
-  .container .main_container > header .nav_list {
+  .container .home_container > header .nav_list {
     gap: 40px;
   }
-  .container .main_container > header .nav_list .logo svg, .container .main_container > header .nav_list .logo img {
+  .container .home_container > header .nav_list .logo svg, .container .home_container > header .nav_list .logo img {
     height: 40px;
   }
-  .container .main_container > header .nav_list ul {
+  .container .home_container > header .nav_list ul {
     display: flex;
   }
-  .container .main_container > header .hot_cart {
+  .container .home_container > header .hot_cart {
     gap: 30px;
   }
-  .container .main_container > header .hot_cart #favorite, .container .main_container > header .hot_cart #basket_word {
+  .container .home_container > header .hot_cart #favorite, .container .home_container > header .hot_cart #basket_word {
     display: flex;
   }
-  .container .main_container > header .hot_cart > span .active_basket {
+  .container .home_container > header .hot_cart > span .active_basket {
     padding: 9px;
   }
-  .container .main_container > header .hot_cart > span .active_basket svg {
+  .container .home_container > header .hot_cart > span .active_basket svg {
     width: 23px;
     height: 23px;
   }
-  .container .main_container > header .hot_cart > span button {
+  .container .home_container > header .hot_cart > span button {
     font-size: 15px;
     letter-spacing: 3px;
   }
-  .container .main_container > header .hot_cart > button {
+  .container .home_container > header .hot_cart > button {
     padding: 10px 12px;
   }
-  .container .main_container .main-content > .new_collection {
+  .container .home_container .main-content > .new_collection {
     flex-direction: row;
   }
-  .container .main_container .main-content > .new_collection .control > span h1 {
+  .container .home_container .main-content > .new_collection .control > span h1 {
     font-size: 52px;
   }
-  .container .main_container .main-content > .new_collection .control > div {
+  .container .home_container .main-content > .new_collection .control > div {
     display: flex;
     gap: 20px;
   }
-  .container .main_container .main-content > .new_collection .product {
+  .container .home_container .main-content > .new_collection .product {
     overflow-x: hidden;
     gap: 30px;
   }
-  .container .main_container .main-content > .new_collection .product > div {
+  .container .home_container .main-content > .new_collection .product > div {
     flex: 0 0 320px;
   }
-  .container .main_container .main-content > .new_collection .shop_button {
+  .container .home_container .main-content > .new_collection .shop_button {
     display: none;
   }
-  .container .main_container .main-content > .week_card > div {
+  .container .home_container .main-content > .week_card > div {
     overflow-x: hidden;
     gap: 30px;
   }
-  .container .main_container .main-content > .week_card > div > div {
+  .container .home_container .main-content > .week_card > div > div {
     flex: 0 0 280px;
   }
-  .container .main_container .main-content > .week_card > div > div > div {
+  .container .home_container .main-content > .week_card > div > div > div {
     flex: 0 0 280px;
   }
-  .container .main_container .main-content > .week_card > span button:hover {
+  .container .home_container .main-content > .week_card > span button:hover {
     transition: 0.4s;
     background-color: #000;
   }
-  .container .main_container .main-content > .week_card > span button:hover svg {
+  .container .home_container .main-content > .week_card > span button:hover svg {
     color: #fff;
     transform: translateX(0px);
+  }
+  .container .home_container .main-content .other_products > div {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 .container .regSystem {
@@ -730,10 +748,10 @@
     width: 450px;
     border-radius: 24px;
   }
-  .container .main_container aside {
+  .container .home_container aside {
     padding: 10px 0;
   }
-  .container .main_container aside .search_box {
+  .container .home_container aside .search_box {
     width: 400px;
   }
 }

@@ -1,0 +1,145 @@
+@mixin header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+
+    .nav_list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        
+        .logo {
+            cursor: pointer;
+            svg, img {
+                height: 30px;
+                width: auto;
+            }
+        }
+
+        ul {
+            display: none;
+            gap: 25px;
+            li {
+                list-style: none;
+                a {
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    color: #000;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .hot_cart {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        #favorite, #basket_word {
+            display: none;
+        }
+
+        .basket_word {
+            width: auto;
+            background-color: black;
+            color: #fff;
+            border-radius: 25px;
+            text-transform: capitalize;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        > span {
+            display: flex;
+            button {
+                cursor: pointer;
+                background-color: black;
+                color: #fff;
+                border-radius: 25px;
+                text-transform: capitalize;
+                font-size: 13px;
+                letter-spacing: 1px;
+                padding: 0 15px;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .active_basket {
+                padding: 7px;
+                background-color: #fff;
+                border: 4px solid black;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                svg {
+                    width: 23px;
+                    height: 23px;
+                    color: black;
+                }
+            }
+        }
+
+        > button {
+            // width: 45px;
+            // height: 45px;
+            padding: 10px 12px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border: none;
+            cursor: pointer;
+            
+            svg {
+                width: 20px;
+                color: white;
+            }
+        }
+    }
+}
+
+@mixin productCard {
+    > div {
+        flex: 0 0 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        > div {
+            flex: 0 0 170px;
+            height: auto;
+            border: 1px solid #D7D7D7;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        b {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: #00000044;
+        }
+
+        span {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: -5px;
+        }
+        @content
+    }
+}
