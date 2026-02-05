@@ -20,48 +20,48 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-.container .main_container header {
+.container .main_container > header {
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding: 20px 0;
   align-items: center;
 }
-.container .main_container header .nav_list {
+.container .main_container > header .nav_list {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.container .main_container header .nav_list .logo {
+.container .main_container > header .nav_list .logo {
   cursor: pointer;
 }
-.container .main_container header .nav_list .logo svg, .container .main_container header .nav_list .logo img {
+.container .main_container > header .nav_list .logo svg, .container .main_container > header .nav_list .logo img {
   height: 30px;
   width: auto;
 }
-.container .main_container header .nav_list ul {
+.container .main_container > header .nav_list ul {
   display: none;
   gap: 25px;
 }
-.container .main_container header .nav_list ul li {
+.container .main_container > header .nav_list ul li {
   list-style: none;
 }
-.container .main_container header .nav_list ul li a {
+.container .main_container > header .nav_list ul li a {
   text-transform: capitalize;
   text-decoration: none;
   color: #000;
   font-size: 16px;
   font-weight: 500;
 }
-.container .main_container header .hot_cart {
+.container .main_container > header .hot_cart {
   display: flex;
   gap: 12px;
   align-items: center;
 }
-.container .main_container header .hot_cart #favorite, .container .main_container header .hot_cart #basket_word {
+.container .main_container > header .hot_cart #favorite, .container .main_container > header .hot_cart #basket_word {
   display: none;
 }
-.container .main_container header .hot_cart .basket_word {
+.container .main_container > header .hot_cart .basket_word {
   width: auto;
   background-color: black;
   color: #fff;
@@ -74,10 +74,10 @@
   align-items: center;
   justify-content: center;
 }
-.container .main_container header .hot_cart > span {
+.container .main_container > header .hot_cart > span {
   display: flex;
 }
-.container .main_container header .hot_cart > span button {
+.container .main_container > header .hot_cart > span button {
   cursor: pointer;
   background-color: black;
   color: #fff;
@@ -91,7 +91,7 @@
   align-items: center;
   justify-content: center;
 }
-.container .main_container header .hot_cart > span .active_basket {
+.container .main_container > header .hot_cart > span .active_basket {
   padding: 7px;
   background-color: #fff;
   border: 4px solid black;
@@ -99,14 +99,13 @@
   display: flex;
   align-items: center;
 }
-.container .main_container header .hot_cart > span .active_basket svg {
+.container .main_container > header .hot_cart > span .active_basket svg {
   width: 23px;
   height: 23px;
   color: black;
 }
-.container .main_container header .hot_cart > button {
-  width: 45px;
-  padding: 10px 20px;
+.container .main_container > header .hot_cart > button {
+  padding: 10px 12px;
   background-color: #000;
   border-radius: 50%;
   display: flex;
@@ -116,7 +115,7 @@
   border: none;
   cursor: pointer;
 }
-.container .main_container header .hot_cart > button svg {
+.container .main_container > header .hot_cart > button svg {
   width: 20px;
   color: white;
 }
@@ -234,6 +233,11 @@
   background-color: transparent;
   border: 1px solid #000;
 }
+.container .main_container .main-content .new_collection .control > div > span button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border: 1px solid #383838;
+}
 .container .main_container .main-content .new_collection .control > div > span button:hover {
   transition: 0.4s;
   background-color: #000;
@@ -290,46 +294,191 @@
   cursor: pointer;
   text-transform: capitalize;
 }
-.container .main_container .main-content .new_collection .shop_button button:hover {
-  transition: 0.4s;
-  background-color: #d3d3d3;
+.container .main_container .main-content .week_card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 0;
 }
-.container .main_container .main-content .new_collection .shop_button button:hover svg {
-  transition: 0.4s;
-  transform: translateX(10px);
+.container .main_container .main-content .week_card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .main_container .main-content .week_card header h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+.container .main_container .main-content .week_card header a {
+  color: #5E5E5E;
+  text-decoration: none;
+}
+.container .main_container .main-content .week_card > div {
+  display: flex;
+  overflow-x: hidden;
+  gap: 15px;
+}
+.container .main_container .main-content .week_card > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 0 0 210px;
+}
+.container .main_container .main-content .week_card > div > div > div {
+  flex: 0 0 210px;
+  height: auto;
+  border: 1px solid #D7D7D7;
+}
+.container .main_container .main-content .week_card > div > div > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .main_container .main-content .week_card > div > div b {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.2666666667);
+}
+.container .main_container .main-content .week_card > div > div span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: -5px;
+}
+.container .main_container .main-content .week_card > span {
+  display: flex;
+  gap: 10px;
+  width: auto;
+  margin: 0 auto;
+}
+.container .main_container .main-content .week_card > span button {
+  width: 50px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+.container .main_container .main-content .week_card > span button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border: 1px solid #383838;
+}
+.container .main_container .main-content .other_products {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .main_container .main-content .other_products header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.container .main_container .main-content .other_products header h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+.container .main_container .main-content .other_products header > div {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.container .main_container .main-content .other_products header > div a {
+  color: #8A8A8A;
+  font-size: 16px;
+  text-decoration: none;
+}
+.container .main_container .main-content .other_products header > div .active {
+  color: #000;
+  font-weight: 500;
+}
+.container .main_container .main-content .other_products > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  justify-content: center;
+}
+.container .main_container .main-content .other_products > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.container .main_container .main-content .other_products > div > div > div {
+  flex: 1 1 150px;
+  height: auto;
+  border: 1px solid #D7D7D7;
+}
+.container .main_container .main-content .other_products > div > div > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .main_container .main-content .other_products > div > div b {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.2666666667);
+}
+.container .main_container .main-content .other_products > div > div span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: -5px;
+}
+.container .main_container .main-content .other_products > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .main_container .main-content .other_products > span a {
+  text-decoration: none;
+  color: #8A8A8A;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: -10px;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 @media screen and (min-width: 1024px) {
-  .container .main_container header {
+  .container .main_container > header {
     padding: 40px 0;
   }
-  .container .main_container header .nav_list {
+  .container .main_container > header .nav_list {
     gap: 40px;
   }
-  .container .main_container header .nav_list .logo svg, .container .main_container header .nav_list .logo img {
+  .container .main_container > header .nav_list .logo svg, .container .main_container > header .nav_list .logo img {
     height: 40px;
   }
-  .container .main_container header .nav_list ul {
+  .container .main_container > header .nav_list ul {
     display: flex;
   }
-  .container .main_container header .hot_cart {
+  .container .main_container > header .hot_cart {
     gap: 30px;
   }
-  .container .main_container header .hot_cart #favorite, .container .main_container header .hot_cart #basket_word {
+  .container .main_container > header .hot_cart #favorite, .container .main_container > header .hot_cart #basket_word {
     display: flex;
   }
-  .container .main_container header .hot_cart > span .active_basket {
+  .container .main_container > header .hot_cart > span .active_basket {
     padding: 9px;
   }
-  .container .main_container header .hot_cart > span .active_basket svg {
+  .container .main_container > header .hot_cart > span .active_basket svg {
     width: 23px;
     height: 23px;
   }
-  .container .main_container header .hot_cart > span button {
+  .container .main_container > header .hot_cart > span button {
     font-size: 15px;
     letter-spacing: 3px;
   }
-  .container .main_container header .hot_cart > button {
-    width: 50px;
+  .container .main_container > header .hot_cart > button {
+    padding: 10px 12px;
   }
   .container .main_container .main-content > .new_collection {
     flex-direction: row;
@@ -350,6 +499,24 @@
   }
   .container .main_container .main-content > .new_collection .shop_button {
     display: none;
+  }
+  .container .main_container .main-content > .week_card > div {
+    overflow-x: hidden;
+    gap: 30px;
+  }
+  .container .main_container .main-content > .week_card > div > div {
+    flex: 0 0 280px;
+  }
+  .container .main_container .main-content > .week_card > div > div > div {
+    flex: 0 0 280px;
+  }
+  .container .main_container .main-content > .week_card > span button:hover {
+    transition: 0.4s;
+    background-color: #000;
+  }
+  .container .main_container .main-content > .week_card > span button:hover svg {
+    color: #fff;
+    transform: translateX(0px);
   }
 }
 .container .regSystem {

@@ -8,12 +8,10 @@ export const favorite = document.getElementById("favorite");
 export const userLogo = document.getElementById("user_logo");
 export const basketBtn = document.getElementById("basketBtn");
 
-// Выносим рендеринг кнопок в функцию
 function renderAuthButtons() {
     const authStatus = localStorage.getItem('isLoggedIn');
 
     if (authStatus === "true") {
-        // Логика для залогиненного пользователя
         favorite.style.display = "flex";
         userLogo.style.display = "flex";
         basketBtn.style.display = "flex";
@@ -21,7 +19,6 @@ function renderAuthButtons() {
         btnJoin.remove();
         btnAdd.remove();
     } else {
-        // Логика для гостя
         favorite.style.display = "none";
         userLogo.style.display = "none";
         basketBtn.style.display = "none";
@@ -41,12 +38,16 @@ function renderAuthButtons() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('isLoggedIn') === null) {
+    const authStatus = localStorage.getItem('isLoggedIn');
+    if (authStatus === null) {
         localStorage.setItem('isLoggedIn', "false");
     }
-    
+    if (authStatus === "false") {
+        localStorage.setItem('isLoggedIn', "false");
+        register();
+    }
     renderAuthButtons();
-    register();
+    
 });
 
 window.addEventListener('resize', renderAuthButtons);
