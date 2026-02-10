@@ -20,10 +20,11 @@ export function register() {
         signInCard.style.display = 'block';
         signUpCard.style.display = 'none';
     });
-    
+
     signInClose.forEach(closeBtn =>
         closeBtn.addEventListener('click', () => {
             registerMain.style.display = "none";
+            document.getElementById("profile_container").style.display = "none";
         }));
 }
 
@@ -32,7 +33,7 @@ const eyeContainers = document.querySelectorAll("#eyeShow");
 eyeContainers.forEach(container => {
     const eyeOff = container.querySelector("#eyeOff");
     const eyeOn = container.querySelector("#eyeOn");
-    
+
     const input = container.previousElementSibling;
 
     if (eyeOn) eyeOn.style.display = "none";
@@ -50,24 +51,28 @@ eyeContainers.forEach(container => {
     });
 });
 
-import { hotBth, btnJoin, btnAdd, favorite, userLogo, basketBtn } from './main.js'
+import { hotBth, headerJoin, headerReg, favorite, userLogo, basketBtn, renderAuthButtons } from './main.js'
 
-btnJoin.addEventListener("click", () => {
-    register()
-})
+if (headerJoin) {
+    headerJoin.addEventListener("click", () => {
+        register();
+    });
+}
 
-btnAdd.addEventListener("click", () => {
-    register();
-    signInCard.style.display = 'none';
-    signUpCard.style.display = 'block';
-});
+if (headerReg) {
+    headerReg.addEventListener("click", () => {
+        register();
+        signInCard.style.display = 'none';
+        signUpCard.style.display = 'block';
+    });
+}
 
 const signInBtn = document.getElementById("joinAcc");
 
 const emailJoinErr = document.getElementById("emailJoinErr");
 const passJoinErr = document.getElementById("passJoinErr");
 
-signInBtn.addEventListener("click", () => {
+signInBtn.addEventListener("click", async () => {
     emailJoinErr.innerHTML = "";
     passJoinErr.innerHTML = "";
 
@@ -99,40 +104,57 @@ signInBtn.addEventListener("click", () => {
     }
 
 
+
+    const hashedInputPassword = await hashPassword(passwordJoin);
+
     fetch("https://697b7dc30e6ff62c3c5c3d92.mockapi.io/users")
         .then(res => res.json())
         .then(users => {
-            console.log(users)
-            const foundUser = users.find(u => u.email === emailJoin && u.password === passwordJoin);
+            const foundUser = users.find(u =>
+                u.email === emailJoin && u.password === hashedInputPassword
+            );
 
             if (foundUser) {
+                localStorage.setItem("userToken", foundUser.token);
                 localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
-                signInCard.style.display = "none"
-                signUpCard.style.display = "none"
+                const { password, ...userData } = foundUser;
+                localStorage.setItem("currentUser", JSON.stringify(userData));
 
-                favorite.style.display = "flex"
-                userLogo.style.display = "flex"
-                basketBtn.style.display = "flex"
+                signInCard.style.display = "none";
+                signUpCard.style.display = "none";
+                registerMain.style.display = "none";
 
-                hotBth.removeChild(btnJoin);
-                hotBth.removeChild(btnAdd);
+                renderAuthButtons();
+
+                console.log("Вход выполнен успешно!");
             } else {
                 emailJoinErr.innerHTML = "Invalid email or password";
-                console.log(users)
             }
-        });
+        })
+        .catch(err => console.error("Ошибка при входе:", err));
 });
+
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function generateToken() {
+    return crypto.randomUUID();
+}
 
 const signUpBtn = document.getElementById("addAcc");
 
-signUpBtn.addEventListener("click", (e) => {
+signUpBtn.addEventListener("click", async (e) => {
     e.preventDefault();
 
     const username = document.getElementById("reg-username").value.trim();
     const email = document.getElementById("reg-email").value.trim();
-    const password = document.getElementById("passwordSign").value; 
+    const password = document.getElementById("passwordSign").value;
     const confirmPass = document.getElementById("reg-confirm-password").value;
     const terms = document.getElementById("terms").checked;
 
@@ -185,43 +207,49 @@ signUpBtn.addEventListener("click", (e) => {
     }
 
     if (isValid) {
+
+        const encryptedPassword = await hashPassword(password);
+
+        const userToken = generateToken();
+
         const newUser = {
             name: username,
             email: email,
-            password: password
+            password: encryptedPassword,
+            token: userToken,
+            userStatus: "banned"
         };
 
-        signInCard.style.display = "none"
-        signUpCard.style.display = "none"
-
-        favorite.style.display = "flex"
-        userLogo.style.display = "flex"
-        basketBtn.style.display = "flex"
-
-        hotBth.removeChild(btnJoin);
-        hotBth.removeChild(btnAdd);
 
         fetch("https://697b7dc30e6ff62c3c5c3d92.mockapi.io/users", {
             method: "POST",
-            headers: { 
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newUser)
         })
-        .then(async res => {
-            if (!res.ok) {
-                const errorText = await res.text();
-                throw new Error(`Ошибка сервера (${res.status}): ${errorText}`);
-            }
-            return res.json();
-        })
-        .then(data => {
-            console.log("Успешно сохранено:", data);
-            alert(`Аккаунт создан! Ваш ID: ${data.id}`);
-            localStorage.setItem('isLoggedIn', "true");
-        })
-        .catch(err => {
-            console.error("Детали ошибки:", err.message);
-        });
+            .then(async res => {
+                if (!res.ok) {
+                    const errorText = await res.text();
+                    throw new Error(`Ошибка сервера (${res.status}): ${errorText}`);
+                }
+                return res.json();
+            })
+            .then(data => {
+                console.log("Успешно сохранено:", data);
+
+
+                localStorage.setItem('userToken', data.token);
+                localStorage.setItem('isLoggedIn', "true");
+
+                signInCard.style.display = "none";
+                signUpCard.style.display = "none";
+                registerMain.style.display = "none";
+
+                renderAuthButtons();
+
+                alert(`Аккаунт создан успешно!`);
+            })
+            .catch(err => {
+                console.error("Детали ошибки:", err.message);
+            });
     }
 });
