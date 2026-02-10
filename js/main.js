@@ -51,10 +51,9 @@ function createProfileUI(user) {
         <path d="M18 6l-12 12" />
         <path d="M6 6l12 12" />
     </svg>
-    `; // Для простоты пока так
+    `;
     closeBtn.onclick = () => container.remove();
 
-    // Контент
     const content = document.createElement('div');
     content.innerHTML = `
         <h3>Профиль</h3>
@@ -63,7 +62,6 @@ function createProfileUI(user) {
         <p>Статус: <b>${user.userStatus === 'active' ? 'Админ' : 'Пользователь'}</b></p>
     `;
 
-    // Если админ — добавляем спец-кнопку
     if (user.userStatus === 'active') {
         const adminBtn = document.createElement('button');
         adminBtn.textContent = 'Админ-панель';
