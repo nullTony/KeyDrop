@@ -1,4 +1,5 @@
 @import "./loyout.scss";
+@import "./admin.scss";
 
 * {
     margin: 0;
@@ -254,7 +255,7 @@
                     }
                 }
 
-                >span {
+                > span {
                     display: flex;
                     gap: 10px;
                     width: auto;
