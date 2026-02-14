@@ -106,6 +106,7 @@ signInBtn.addEventListener("click", async () => {
 
 
     const hashedInputPassword = await hashPassword(passwordJoin);
+    console.log(hashedInputPassword)
 
     fetch("https://697b7dc30e6ff62c3c5c3d92.mockapi.io/users")
         .then(res => res.json())
