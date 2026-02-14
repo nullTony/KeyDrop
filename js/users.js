@@ -72,15 +72,24 @@ const signInBtn = document.getElementById("joinAcc");
 const emailJoinErr = document.getElementById("emailJoinErr");
 const passJoinErr = document.getElementById("passJoinErr");
 
-signInBtn.addEventListener("click", async () => {
-    emailJoinErr.innerHTML = "";
-    passJoinErr.innerHTML = "";
+signInBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
 
-    const passwordJoin = document.getElementById("passwordJoin").value;
-    const emailJoin = document.getElementById("emailJoin").value.trim();
+    if (emailJoinErr) emailJoinErr.innerHTML = "";
+    if (passJoinErr) passJoinErr.innerHTML = "";
+
+    const emailInput = document.getElementById("emailJoin");
+    const passInput = document.getElementById("passwordJoin");
+
+    if (!emailInput || !passInput) {
+        console.error("Поля ввода не найдены в HTML!");
+        return;
+    }
+
+    const emailJoin = emailInput.value.trim().toLowerCase();
+    const passwordJoin = passInput.value;
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 
     if (emailJoin === "") {
         emailJoinErr.innerHTML = "Email field cannot be empty";
@@ -88,7 +97,7 @@ signInBtn.addEventListener("click", async () => {
     }
 
     if (!emailPattern.test(emailJoin)) {
-        emailJoinErr.innerHTML = "Please enter a valid email address (e.g., name@icloud.com)";
+        emailJoinErr.innerHTML = "Please enter a valid email address";
         return;
     }
 
@@ -97,38 +106,26 @@ signInBtn.addEventListener("click", async () => {
         return;
     }
 
-
-    if (passwordJoin.length < 8) {
-        passJoinErr.innerHTML = "Password must be at least 8 characters long";
-        return;
-    }
-
-
-
     const hashedInputPassword = await hashPassword(passwordJoin);
-    console.log(hashedInputPassword)
+    
+    console.log("Введенный email (lower):", emailJoin);
+    console.log("Хэш пароля:", hashedInputPassword);
 
     fetch("https://697b7dc30e6ff62c3c5c3d92.mockapi.io/users")
         .then(res => res.json())
         .then(users => {
-            const foundUser = users.find(u =>
-                u.email === emailJoin && u.password === hashedInputPassword
+            const foundUser = users.find(u => 
+                u.email.toLowerCase() === emailJoin && u.password === hashedInputPassword
             );
 
             if (foundUser) {
                 localStorage.setItem("userToken", foundUser.token);
                 localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
-                const { password, ...userData } = foundUser;
-                localStorage.setItem("currentUser", JSON.stringify(userData));
-
-                signInCard.style.display = "none";
-                signUpCard.style.display = "none";
                 registerMain.style.display = "none";
-
                 renderAuthButtons();
-
-                console.log("Вход выполнен успешно!");
+                alert("Вход выполнен успешно!");
             } else {
                 emailJoinErr.innerHTML = "Invalid email or password";
             }
